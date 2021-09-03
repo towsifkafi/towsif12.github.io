@@ -61,6 +61,7 @@ body {
     background-color: #161616;
     line-height: 1.6;
     overflow: hidden;
+    user-select: none;
 }
 
 ul {
