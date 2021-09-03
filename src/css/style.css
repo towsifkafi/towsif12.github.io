@@ -8,6 +8,14 @@
     margin: 0;
 }
 
+.circle {
+	position: absolute;
+    border: solid 1px lightcoral;
+	width: 15px; 
+	height: 15px; 
+    border-radius: 20%;
+}
+
 
 .material-icons {
     font-family: 'Material Icons';
@@ -48,10 +56,10 @@
 }
 
 .sky {
-    animation: sky 3s infinite alternate;
+    color: white;
 }
 .sky:hover {
-    animation: red 3s infinite ease-in;
+    animation: color 5s ease infinite alternate;
 }
 
 
