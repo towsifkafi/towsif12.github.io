@@ -1,3 +1,17 @@
+$.fn.animateRotate = function(angle, duration, easing, complete) {
+    var args = $.speed(duration, easing, complete);
+    var step = args.step;
+    return this.each(function(i, e) {
+      args.complete = $.proxy(args.complete, e);
+      args.step = function(now) {
+        $.style(e, 'transform', 'rotate(' + now + 'deg)');
+        if (step) return step.apply(e, arguments);
+      };
+  
+      $({deg: 0}).animate({deg: angle}, args);
+    });
+  };
+
 var width = $(window).width();
 if (width < 768){
     $(".titlenav").empty()
@@ -38,6 +52,13 @@ $(document).ready(function() {
       x: boxBoundingRect.left + boxBoundingRect.width/2, 
       y: boxBoundingRect.top + boxBoundingRect.height/2
   };
+
+  let box2 = document.querySelector(".circle");
+  let boxBoundingRect2 = box2.getBoundingClientRect();
+  let boxCenter2= {
+      x: boxBoundingRect2.left + boxBoundingRect2.width/2, 
+      y: boxBoundingRect2.top + boxBoundingRect2.height/2
+  };
   
   document.addEventListener("mousemove", e => {
       let angle = Math.atan2(e.pageX - boxCenter.x, - (e.pageY - boxCenter.y) )*(180 / Math.PI);      
@@ -48,5 +69,12 @@ $(document).ready(function() {
         box.style.transform = `rotate(${angle-100}deg)`;  
         $('#avatar').addClass('flipped')
       }
+      
+      let angle2 = Math.atan2(e.pageX - boxCenter2.x, - (e.pageY - boxCenter2.y) )*(180 / Math.PI);      
+      //box2.style.transform = `rotate(${angle2+Math.floor(Math.random()*20)}deg)`; 
+      $('.circle').animateRotate([-180, 180][Math.floor(Math.random()*2)], 500)
+
+
+      console.log(angle2)
       console.log(angle)
   })

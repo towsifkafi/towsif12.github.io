@@ -214,6 +214,7 @@ p {
     margin-right: auto;
 }
 
+
 @keyframes bd {
     0% { color: rgba(84, 242, 84, 0.734); }
     25% { color: rgba(84, 242, 84, 0.734); }
