@@ -41,6 +41,12 @@ $(document).ready(function() {
   
   document.addEventListener("mousemove", e => {
       let angle = Math.atan2(e.pageX - boxCenter.x, - (e.pageY - boxCenter.y) )*(180 / Math.PI);      
-      box.style.transform = `rotate(${angle+90}deg)`;  
-      console.log(angle+90)
+      if(angle < 10) {
+        box.style.transform = `rotate(${angle+90}deg)`; 
+        $('#avatar').removeClass('flipped') 
+      } else {
+        box.style.transform = `rotate(${angle-90}deg)`;  
+        $('#avatar').addClass('flipped')
+      }
+      console.log(angle)
   })
