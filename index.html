@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
+    <script src="src/js/typer.min.js"></script>
     <title>Home | Something</title>
 
     <meta content="Towsif Kafi" property="og:title">
@@ -60,7 +61,7 @@
             <h1>Towsif Kafi</h1>
         </div>
         <div class="description">
-            <p>Some random guy from <span id="bd">Bangladesh</span></p>
+            <p>Some random guy from <span id="bd"></span></p>
         </div>
     </div>
 
@@ -79,5 +80,15 @@
     <script src="src/js/index.js"></script>
     <script src="src/js/avatar.js"></script>
     <script src="src/js/cursor.js"></script>
+
+    <script>
+        $('#bd').typer({
+            repeat:true,
+            backspaceDelay: 2000,
+            strings: [
+                'Bangladesh'
+            ]
+        })
+    </script>
 </body>
 </html>
