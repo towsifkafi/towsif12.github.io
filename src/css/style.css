@@ -64,7 +64,7 @@
 }
 
 .sky {
-    color: white;
+    color: lightcoral;
 }
 .sky:hover {
     animation: color 5s ease infinite alternate;
@@ -115,7 +115,7 @@ p {
 }
 
 .nav a {
-    color: white;
+    color: lightcoral;
     padding: 10px;
     margin: 0 5px;
 }
@@ -200,8 +200,9 @@ p {
 }
 
 #avatar {
+    border: solid 2.5px lightcoral;
     border-radius: 50%;
-    width: 30%;
+    width: 28%;
     height: auto;
     margin-top: 12%;
     margin-left: auto;
