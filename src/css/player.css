@@ -1,0 +1,45 @@
+.aplayer {
+    margin-left: -50%;
+    margin-top: 40%;
+    margin-bottom: auto;
+    width: 200%;
+    background: #1d1d1d;
+    color: lightcoral;
+}
+
+.lyrics {
+    margin-top: 10%;
+    color: lightcoral;
+}
+
+.aplayer-info {
+    color: lightcoral;
+    background-color: #1d1d1d;
+}
+
+.aplayer .aplayer-lrc:before {
+    background: linear-gradient(180deg,#1d1d1d 0,#1d1d1d);
+}
+
+.aplayer .aplayer-lrc:after {
+    background: linear-gradient(180deg,#1d1d1d 0,#1d1d1d);
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+    color: lightcoral;
+}
+
+.aplayer .aplayer-list ol li.aplayer-list-light {
+    background: #3f3f3f;
+}
+
+.aplayer .aplayer-list ol li {
+    border-top: 1px solid #353535;
+}
+.aplayer .aplayer-list ol li:hover {
+    background: #3f3f3f;
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-cur {
+    background-color: lightcoral;
+}
