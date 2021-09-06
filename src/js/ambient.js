@@ -2,11 +2,16 @@ const rain = new Tone.Player("src/sounds/rain.mp3").toDestination();
 const thunder = new Tone.Player("src/sounds/thunder.mp3").toDestination();
 const waves = new Tone.Player("src/sounds/waves.mp3").toDestination();
 
-$('#sounds').prop('disabled', true)
+$('.rain').prop('disabled', true)
+$('.thunder').prop('disabled', true)
+$('.waves').prop('disabled', true)
+
 $('#status').text('Please Wait..')
 
 Tone.loaded().then(() => {
-    $('#sounds').prop('disabled', false)
+    $('.rain').prop('disabled', false)
+    $('.thunder').prop('disabled', false)
+    $('.waves').prop('disabled', false)
     $('#status').text('Now you can use sliders..')
 });
 
