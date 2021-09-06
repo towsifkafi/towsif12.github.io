@@ -1,0 +1,45 @@
+.sounds {
+    margin-left: -25%;
+    margin-right: auto;
+    margin-top: 30%;
+    width: 150%;
+}
+
+.sounds td {
+    text-align: center;
+    color: lightcoral;
+}
+
+.icons {
+    color: lightcoral;
+    font-size: 300%;
+}
+
+#sounds {
+    -webkit-appearance: none;
+    background: #1d1d1d;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#sounds::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: lightcoral;
+    cursor: pointer;
+}
+
+#sounds:hover {
+    opacity: 1;
+}
+
+.status {
+    color: lightcoral;
+    text-align: center;
+    font-size: 100%;
+    margin-top: 10%;
+}
