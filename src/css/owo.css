@@ -1,0 +1,66 @@
+.OwO-textarea {
+    width: 800px;
+    height: 150px;  
+    margin-bottom: 10px; 
+    margin-top: 10%;
+    padding: 20px;
+    outline: none;
+    background-color: #1d1d1d;
+    color: white;
+}
+
+.OwO .OwO-logo {
+    background: #1d1d1d;
+    border: 1px solid #767676;
+}
+
+.OwO-logo span {
+    color: lightcoral;
+}
+
+.OwO .OwO-body {
+    background: #1d1d1d;
+    overflow: hidden;
+    border: 1px solid #767676;
+}
+
+.OwO .OwO-body .OwO-items {
+    overflow: scroll;
+}
+
+.OwO .OwO-body .OwO-items .OwO-item {
+    background: #2c2c2c;
+    color: white;
+}
+
+.OwO .OwO-body .OwO-items .OwO-item:hover {
+    color: #2c2c2c;
+}
+
+.OwO .OwO-body .OwO-bar {
+    background: #1d1d1d;
+}
+.OwO .OwO-body .OwO-bar .OwO-packages li {
+    color: lightcoral
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: lightcoral; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: lightslategray; 
+  }

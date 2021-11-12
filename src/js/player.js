@@ -51,6 +51,7 @@ $(document).ready(() => {
     $().progress(100)
 
     setInterval(() => {
+        if(ap.lrc.current.length == 1) return $('#lyrics').text(ap.lrc.current[0][1])
         $('#lyrics').text(ap.lrc.current[ap.lrc.index][1])
     }, 10);
 

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@600&display=swap');
-@import url('/src/css/snow.css');
-@import url('/src/css/progressbar.css');
+@import url('./snow.css');
+@import url('./progressbar.css');
 
 * {
     box-sizing: border-box;

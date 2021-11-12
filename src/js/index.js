@@ -75,3 +75,7 @@ setCookie = (name, obj) => {
   var e = 'Thu Nov 29 2100 15:44:38';
   document.cookie = `${name}=` + JSON.stringify(obj) + ';expires=' + e;
 }
+
+$('a').click(() => {
+  $.fn.progress(100)
+})
