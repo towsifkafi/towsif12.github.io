@@ -9,6 +9,9 @@
     margin: 0;
 }
 
+
+
+
 .circle {
 	position: absolute;
     border: solid 1px lightcoral;
@@ -52,7 +55,7 @@
   }
 
 .responsive {
-    width: 100%;
+    width: auto;
     height: auto;
 }
 
@@ -108,8 +111,7 @@ p {
     background-color: #1d1d1d; 
     color: white;
     height: 50px;
-    width: auto;
-    
+    width: auto;    
 }
 
 .nav ul {
@@ -138,7 +140,7 @@ p {
 
 
 .container {
-    max-width: 1300px;
+    max-width: auto;
     margin: 0 auto;
     overflow: auto;
     padding: 0 40px;
@@ -273,7 +275,10 @@ p {
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 800px) {
+    *::-webkit-scrollbar {
+        display: none;
+    }
     .container {
         max-width: 500px;
         margin: 0 auto;

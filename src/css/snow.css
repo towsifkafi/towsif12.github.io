@@ -598,22 +598,6 @@
     }
 }
 
-.snow:nth-child(38) {
-    opacity: 0.6541;
-    transform: translate(91.8116vw, -10px) scale(0.6878);
-    animation: fall-38 29s -8s linear infinite;
-}
-
-@keyframes fall-38 {
-    43.427% {
-        transform: translate(94.3537vw, 43.427vh) scale(0.6878);
-    }
-
-    to {
-        transform: translate(93.08265vw, 100vh) scale(0.6878);
-    }
-}
-
 .snow:nth-child(39) {
     opacity: 0.9967;
     transform: translate(46.314vw, -10px) scale(0.8351);
