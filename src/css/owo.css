@@ -6,7 +6,7 @@
     padding: 20px;
     outline: none;
     background-color: #1d1d1d;
-    color: white;
+    color: #ffffff;
 }
 
 .OwO .OwO-logo {
@@ -34,7 +34,8 @@
 }
 
 .OwO .OwO-body .OwO-items .OwO-item:hover {
-    color: #2c2c2c;
+    color: #ffffff;
+    background-color: #3d3d3d;
 }
 
 .OwO .OwO-body .OwO-bar {
@@ -42,6 +43,13 @@
 }
 .OwO .OwO-body .OwO-bar .OwO-packages li {
     color: lightcoral
+}
+.OwO .OwO-body .OwO-bar .OwO-packages .OwO-package-active {
+    background-color: #2d2d2d;
+}
+
+.OwO .OwO-body .OwO-bar .OwO-packages li:hover {
+    background-color: #2d2d2d;
 }
 
 /* width */

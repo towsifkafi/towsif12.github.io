@@ -92,7 +92,7 @@
             }
         ]
     },
-    "Others": {
+    "ASCII": {
         "type": "emoticon",
         "container": [{
                 "icon": "|´・ω・)ノ",
