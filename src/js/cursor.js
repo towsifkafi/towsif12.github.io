@@ -6,8 +6,8 @@ $(document).ready(function () {
         yp = 0;
 
     $(document).mousemove(function (e) {
-        mouseX = e.pageX - 30;
-        mouseY = e.pageY - 30;
+        mouseX = e.pageX;
+        mouseY = e.pageY;
     });
 
     setInterval(function () {

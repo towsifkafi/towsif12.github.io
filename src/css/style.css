@@ -11,6 +11,127 @@
 
 
 
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.vl {
+    border-left: 2px solid lightcoral;
+    height: 200px;
+    opacity: 30%;
+    margin: 50px 50px;
+}
+#hl {
+    border-top: 2px solid lightcoral;
+    margin: 0% 0% !important;
+    opacity: 30%;
+    margin: 50px 50px;
+}
+
+
+
+.activity {
+    background-color: #1d1d1d;
+    border-radius: 2%;
+}
+
+.active {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
+.disavatar {
+    display: flex;
+}
+
+#disavatar {
+    border: solid 2.5px lightcoral;
+    margin: 3% 4%;
+    border-radius: 40%;
+    width: 10%;
+    height: auto;
+    display: table;
+}
+
+.userinfo {
+    display: flex;
+    align-items: center;
+}
+
+#username {
+    color: white;
+}
+
+#customStatus {
+    color: #bbbbbb;
+    font-size: 110%;
+    margin: 2% 2%;
+}
+
+.customStatus {
+    display: flex;
+    flex-direction: column;
+}
+
+.statusContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.statusBox {
+    background-color: #2e2e2e;
+    width: 90%;
+    margin-bottom: 2%;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    display: flex;
+}
+
+.activityBox {
+    width: 90%;
+    display: flex;
+    color: white
+}
+
+.activityInfo {
+    font-size: 90%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.activityImgBox {
+    display: inline-block;
+    position: relative;
+}
+
+#activityImage {
+    margin: 3% 3%;
+    width: 70%;
+    border-radius: 10%;
+
+}
+
+#activityImageSmall {
+    position: absolute;
+    width: 25%;
+    border-radius: 60%;
+    bottom: 5%;
+    right: 20%;
+}
+
+
+.profile {
+    background-color: #1d1d1d;
+    border-radius: 2%;
+}
+
 
 .circle {
 	position: absolute;
@@ -104,7 +225,7 @@ h2 {
 }
 
 p {
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 .nav {
@@ -187,10 +308,9 @@ p {
     font-family: 'Mitr', sans-serif;
     font-size: 150%;
     color: white;
-    margin-top: 12%;
-    margin-left: auto;
-    margin-right: auto;
-    display: table;
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
 }
 .title h1 {
     background: linear-gradient(130deg, #4d91f7, #ff5858, #98f363);
@@ -223,8 +343,11 @@ p {
 }
 
 #links {
+    margin-top: 3%;
     margin-left: auto;
     margin-right: auto;
+    background-color: #1d1d1d;
+    border-radius: 3%;
 }
 
 
