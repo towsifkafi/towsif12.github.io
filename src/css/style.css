@@ -3,6 +3,19 @@
 @import url('./snow.css');
 @import url('./progressbar.css');
 
+::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -13,20 +26,22 @@
 
 .page {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     margin-top: 5%;
+    margin: 5% 5%;
 }
 
 .vl {
     border-left: 2px solid lightcoral;
-    height: 200px;
+    height: 80%;
     opacity: 30%;
-    margin: 50px 50px;
+    margin: 25px 50px;
 }
+
 #hl {
     border-top: 2px solid lightcoral;
-    margin: 0% 0% !important;
+    margin: 1% 0% !important;
     opacity: 30%;
     margin: 50px 50px;
 }
@@ -36,6 +51,7 @@
 .activity {
     background-color: #1d1d1d;
     border-radius: 2%;
+    width: 100%;
 }
 
 .active {
@@ -79,7 +95,11 @@
 
 .statusContainer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-bottom: 2%;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 5%;
 }
 
 .statusBox {
@@ -93,7 +113,7 @@
 }
 
 .activityBox {
-    width: 90%;
+    width: 50%;
     display: flex;
     color: white
 }
@@ -109,13 +129,13 @@
 .activityImgBox {
     display: inline-block;
     position: relative;
+    width: 50%;
 }
 
 #activityImage {
     margin: 3% 3%;
     width: 70%;
     border-radius: 10%;
-
 }
 
 #activityImageSmall {
@@ -130,6 +150,7 @@
 .profile {
     background-color: #1d1d1d;
     border-radius: 2%;
+    width: 100%;
 }
 
 
@@ -139,6 +160,7 @@
 	width: 15px; 
 	height: 15px; 
     border-radius: 20%;
+    pointer-events: none;
 }
 
 .flipped {
@@ -188,6 +210,11 @@
 
 }
 
+.navbox {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
 .sky {
     color: lightcoral;
 }
@@ -201,7 +228,7 @@ body {
     color: #1d2027;
     background-color: #161616;
     line-height: 1.6;
-    overflow: hidden;
+    /* overflow: hidden; */
     user-select: none;
 }
 
@@ -232,7 +259,7 @@ p {
     background-color: #1d1d1d; 
     color: white;
     height: 50px;
-    width: auto;    
+    width: auto;
 }
 
 .nav ul {
@@ -253,8 +280,8 @@ p {
 
 .bottomright {
     position: absolute;
-    bottom: 8px;
-    right: 16px;
+    bottom: 1%;
+    right: 1%;
     font-size: 15px;
     color: lightcoral;
 }
@@ -264,7 +291,6 @@ p {
     max-width: auto;
     margin: 0 auto;
     overflow: auto;
-    padding: 0 40px;
 }
 
 .flex {
@@ -281,8 +307,7 @@ p {
 }
 
 .main {
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     display: table;
 }
 
@@ -334,7 +359,7 @@ p {
 #avatar {
     border: solid 2.5px lightcoral;
     border-radius: 50%;
-    width: 28%;
+    width: 9rem;
     height: auto;
     margin-top: 12%;
     margin-left: auto;
@@ -348,6 +373,209 @@ p {
     margin-right: auto;
     background-color: #1d1d1d;
     border-radius: 3%;
+}
+
+.topbar {
+    padding: 1% 1%;
+    overflow: hidden;
+}
+
+.divider {
+    justify-content: center;
+}
+
+
+.projectsBox {
+    background-color: #1d1d1d;
+    border-radius: 2%;
+    color: #fff;
+    display: table;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.projectData {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectData .projectTitle {
+    font-size: 95%;
+}
+
+.projectData .projectDesc {
+    font-size: 78%;
+}
+
+.projectData a {
+    color:rgb(54, 178, 255);
+    font-size: 80%;
+}
+
+.projectItem {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+    background: #2d2d2d;
+    border-radius: 2%;
+    margin: 2% 1% 1% 2%;
+    padding-left: 2%;
+}
+
+.projectItem img {
+    width: 18%;
+    border-radius: 6%;
+}
+
+.skillsBox {
+    background-color: #1d1d1d;
+    border-radius: 2%;
+    color: #fff;
+    display: table;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.progress-bar {
+    height: 20px;
+    background: #1da1f2;
+    box-shadow: 2px 14px 15px -7px rgba(30, 166, 250, 0.36);
+    border-radius: 50px;
+    transition: all 0.5s;
+  }
+
+.skillsbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+#barIcon {
+    width: 10%;
+    position: relative;
+    left: 5%;
+}
+
+.meterBar {
+    width: 93%;
+    height: 0.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: end;
+    padding: 0.2rem;
+    background: #fae060;
+    border-radius: 20px;
+    box-shadow: 0px 8px 40px #abb7e9;
+}
+
+#boxTitles {
+    font-size: 120%;
+    margin-bottom: 2%;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.skillitem {
+    padding: 5% 5% 3% 5%;
+    padding-top: 1%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.skillicon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+    width: 7%;
+}
+
+
+.memeBox {
+    background-color: #1d1d1d;
+    border-radius: 2%;
+    color: #fff;
+    display: table;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.memeBox img {
+    max-width: 95%;
+    max-height: 95%;
+}
+
+.contactBox {
+    background-color: #1d1d1d;
+    border-radius: 2%;
+    color: #fff;
+    display: table;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5% 5%;
+    text-align: left;
+    height: 100%;
+}
+
+.contactForm input {
+    margin-bottom: 2%;
+    padding: 2% 2%;
+    width: 100%;
+    background: #2d2d2d;
+    border-width: 0px;
+    color: #ff5328ce;
+}
+
+.contactForm textarea {
+    resize: none;
+    width: 100%;
+    background: #2d2d2d;
+    border-width: 0px;
+    margin-bottom: 4%;
+    color: #ff5328ce;
+}
+
+.contactButton:hover {
+    font-weight: 300;
+}
+
+.contactButton:hover {
+    color: #161616;
+    background-color: lightcoral;
+}
+
+
+.footer {
+    width: 100%;
+    display: flex;
+    color: lightcoral;
+    justify-content: center;
+    background-color: #1d1d1d;
+    font-size: 1rem;
+    flex-wrap: wrap
 }
 
 
@@ -424,5 +652,32 @@ p {
     #button {
         font-size: 12px;
         padding: 10px 25px;
+    }
+    .page {
+        flex-direction: column
+    }
+    .vl {
+        display: none
+    }
+    .activity {
+        margin-top: 10%;
+    }
+    .bottomright {
+        display: none;
+    }
+    .projectsBox {
+        margin-bottom: 5%;
+    }
+    .memeBox {
+        margin-bottom: 5%;
+    }
+    #skillName {
+        display: none;
+    }
+    .skillicon {
+        width: 12%;
+    }
+    .footer {
+        font-size: 0.8rem;
     }
 }

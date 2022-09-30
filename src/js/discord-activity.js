@@ -10,21 +10,22 @@ $(document).ready(() => {
 
     // })
 
-    function updateStatus(activity, name, details, state) {
+    function updateStatus(activity, name, details, state,userdata, isSpotify = false) {
         let assets = activity.assets
-        $('#activityImage').attr('src', `https://cdn.discordapp.com/app-assets/${activity.application_id}/${assets.large_image}.png`)
-        $('#activityImageSmall').attr('src', `https://cdn.discordapp.com/app-assets/${activity.application_id}/${assets.small_image}.png`)
 
-        $('#name').text(name)
-        $('#details').text(details)
-        $('#state').text(state)
+        $('#activityImage').attr('src', `${isSpotify ? `${userdata.spotify.album_art_url}` : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${assets.large_image}.png`}`)
+        $('#activityImageSmall').attr('src', `${isSpotify ? `/images/spotify.png` : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${assets.small_image}.png`}`)
+
+        $('#name').text(`${isSpotify ? `${userdata.spotify.song}` : name}`)
+        $('#details').text(`${isSpotify ? `Album: ${userdata.spotify.album}` : details}`)
+        $('#state').text(`${isSpotify ? `${userdata.spotify.artist}` : state}`)
     }
 
     function updateHtml(data) {
 
         if(data.op == 1) return;
         let userdata = data.d
-        console.log(userdata)
+        console.log(data);
 
         let status = userdata.discord_status;
 
@@ -46,9 +47,11 @@ $(document).ready(() => {
             let activity = activities[i];
             if(activity.name == "Custom Status") {
                 $('#statusText').text(`${activity.emoji?.name} ${activity.state}`)
-            } else if(activity.type == 0) {
+            } else if(activity.type == 0 || activity.type == 2) {
 
-                if(userdata.listening_to_spotify) return;
+
+                let isSpotify = false
+                if(userdata.listening_to_spotify) isSpotify = true;
 
                 let assets = activity.assets;
                 let name = activity.name;
@@ -61,7 +64,7 @@ $(document).ready(() => {
                 customStatus.className = "customStatus"
                 let span = document.createElement('span')
                 span.id = "customStatus"
-                span.innerText = "Activity"
+                span.innerText = `${isSpotify ? `Listening to...` : `Activity`}`
                 customStatus.appendChild(span)
                 let statusContainer = document.createElement('div')
                 statusContainer.className = "statusContainer"
@@ -101,9 +104,9 @@ $(document).ready(() => {
                 
                 if(data.t == "INIT_STATE") {
                     $('.presence').append(customStatus)
-                    updateStatus(activity, name,details,state)
+                    updateStatus(activity, name,details,state, userdata, isSpotify)
                 } else if(data.t == "PRESENCE_UPDATE") {
-                    updateStatus(activity, name,details,state)
+                    updateStatus(activity, name,details,state, userdata, isSpotify)
                 }
 
 

@@ -16,6 +16,12 @@ $.fn.animateRotate = function (angle, duration, easing, complete) {
   });
 };
 
+// Metrics
+fetch("https://hmm-api.fly.dev/metrics").then(function(response) {}).then(function(data) {}).catch(function() {});
+
+
+
+
 var width = $(window).width();
 if (width < 768) {
   $(".titlenav").empty()
@@ -78,4 +84,78 @@ setCookie = (name, obj) => {
 
 $('a').click(() => {
   $.fn.progress(100)
-})
+});
+
+
+
+window.addEventListener("load", () => {
+  function sendData() {
+    const XHR = new XMLHttpRequest();
+    const FD = new FormData(form);
+
+    // Define what happens on successful data submission
+    XHR.addEventListener("load", (event) => {
+      alert(event.target.responseText);
+    });
+
+    XHR.addEventListener("error", (event) => {
+      //alert('Error connecting to the API..');
+      console.log(event)
+    });
+
+    // Set up our request
+    XHR.open("POST", "https://werewolf.deta.dev/contact");
+    // The data sent is what the user provided in the form
+    XHR.send(FD);
+  }
+
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendData();
+  });
+
+  // Meme
+  $.get( "https://werewolf.deta.dev/meme", function( data ) {
+    console.log(data)
+    $('#thememe').attr('src', data.attachment)
+  });
+
+
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+  let coord = { x: 0, y: 0 };
+
+  document.addEventListener("mousedown", start);
+  document.addEventListener("mouseup", stop);
+  window.addEventListener("resize", resize);
+
+  resize();
+
+  function resize() {
+    ctx.canvas.width = document.body.clientWidth;
+    ctx.canvas.height = window.innerHeight;
+  }
+  function reposition(event) {
+    coord.x = event.clientX - canvas.offsetLeft;
+    coord.y = event.clientY - canvas.offsetTop;
+  }
+  function start(event) {
+    document.addEventListener("mousemove", draw);
+    reposition(event);
+  }
+  function stop() {
+    document.removeEventListener("mousemove", draw);
+  }
+  function draw(event) {
+    ctx.beginPath();
+    ctx.lineWidth = 5;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "#ACD3ED";
+    ctx.moveTo(coord.x, coord.y);
+    reposition(event);
+    ctx.lineTo(coord.x, coord.y);
+    ctx.stroke();
+  }
+
+});
