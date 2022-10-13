@@ -16,6 +16,7 @@
     <meta content="Towsif Kafi" property="og:title">
     <meta content="A random dude... 0,0" property="og:description">
     <meta content="UwU" property="og:site_name">
+    <link rel="stylesheet" type="text/css" href="/src/css/transition.css"/>
     <link type="application/json+oembed" href="/metadata_discord.json" />
     <meta content='https://i.imgur.com/VFfqRub.png' property='og:image'>
     <meta name="twitter:card" content="summary_large_image">
@@ -24,7 +25,6 @@
 <body>
     <!-- Snow -->
     <div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div>
-
     <!--  Nav Bar    -->
     <div class="nav nosel">
         <div class="container flex">
@@ -57,10 +57,44 @@
         <span id="circle" class="circle"></span>
 
         <div class="status">
-            <span id="status">efef</span>
+            <span id="status">Test</span>
         </div>
 
-        <table class="sounds">
+        <div class="effects">
+
+            <div class="effect rainbox ld ld-blur-in">
+                <i class="fas fa-cloud-moon-rain icons"></i>
+                <span>Rain</span>
+                <input id="sounds" class='rain' type="range" name="rain-volume" min="-30" max="2" value="-30" onchange="rainVol(this.value);">
+            </div>
+
+            <div class="effect thunderbox ld ld-blur-in">
+                    <i class="fas fa-thunderstorm-moon icons"></i>
+                <span>Thunder</span>
+                <input id="sounds" class='thunder' type="range" name="thunder-volume" min="-30" max="2" value="-30" onchange="thunderVol(this.value);">
+            </div>
+
+            <div class="effect wavesbox ld ld-blur-in">
+                <i class="fas fa-wave-sine icons"></i>
+                <span>Waves</span>
+                <input id="sounds" class='waves' type="range" name="waves-volume" min="-30" max="2" value="-30" onchange="wavesVol(this.value);">
+            </div>
+
+            <div class="effect windbox ld ld-blur-in">
+                <i class="fas fa-wind icons"></i>
+                <span>Wind</span>
+                <input id="sounds" class='wind' type="range" name="wind-volume" min="-30" max="2" value="-30" onchange="windVol(this.value);">
+            </div>
+
+            <div class="effect noisebox ld ld-blur-in">
+                <i class="fas fa-waveform icons"></i>
+                <span>Noise</span>
+                <input id="sounds" class='noise' type="range" name="noise-volume" min="-30" max="2" value="-30" onchange="noiseVol(this.value);">
+            </div>
+    
+        </div>
+
+        <!-- <table class="sounds">
             <tr>
                 <td>&nbsp;<i class="fas fa-cloud-moon-rain icons"></i></td>
                 <td><i class="fas fa-thunderstorm-moon icons"></i></td>
@@ -76,13 +110,11 @@
                 <td><input id="sounds" class='thunder' type="range" name="thunder-volume" min="-30" max="2" value="-30" onchange="thunderVol(this.value);"></td>
                 <td><input id="sounds" class='waves' type="range" name="waves-volume" min="-30" max="2" value="-30" onchange="wavesVol(this.value);"></td>
             </tr>
-        </table>
+        </table> -->
 
 
     </div>
-
     
-
     <script src="src/js/index.js"></script>
     <script src="src/js/cursor.js"></script>
     <script src="src/js/ambient.js"></script>

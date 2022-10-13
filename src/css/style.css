@@ -22,6 +22,9 @@
     margin: 0;
 }
 
+:root {
+    --drop-color : #f08080d1
+}
 
 
 .page {
@@ -44,6 +47,35 @@
     margin: 1% 0% !important;
     opacity: 30%;
     margin: 50px 50px;
+}
+
+.dropshadow {
+    transition: all 0.1s ease-in-out;
+}
+
+.dropshadow:hover {
+    transform: scale(1.007);
+    filter: drop-shadow(7px 7px 0px var(--drop-color));
+}
+
+.coralShadow:hover {
+    --drop-color: #f08080d1;
+}
+
+.blueShadow:hover {
+    --drop-color: #80cbf0d1;
+}
+
+.greenShadow:hover {
+    --drop-color: #96f080d1;
+}
+
+.yellowShadow:hover {
+    --drop-color: #e7f080d1;
+}
+
+.whiteShadow:hover {
+    --drop-shadow: #ffffffd1;
 }
 
 
@@ -417,6 +449,11 @@ p {
 .projectData a {
     color:rgb(54, 178, 255);
     font-size: 80%;
+    font-weight: bold;
+}
+
+.projectData a:hover {
+    color: #f06340;
 }
 
 .projectItem {
