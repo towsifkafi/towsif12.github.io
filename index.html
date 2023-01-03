@@ -4,48 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="src/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
-    <script src="src/js/typer.min.js"></script>
-    <script src="src/js/discord-activity.js"></script>
     <link rel="icon" type="image/x-icon" href="https://c.tenor.com/e744X4ecorgAAAAC/shaking-cute.gif">
     <title>Towsif Kafi</title>
-
     <meta content="Towsif Kafi" property="og:title">
     <meta content="A random dude... 0,0" property="og:description">
     <meta content="UwU" property="og:site_name">
-    <link type="application/json+oembed" href="/metadata_discord.json" />
     <meta content='https://i.imgur.com/Z31nwQq.png' property='og:image'>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#fc5184">
+
+    <link rel="stylesheet" href="src/css/style.css">
+    <link type="application/json+oembed" href="/metadata_discord.json" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="src/js/typer.min.js"></script>
+    <script src="src/js/discord-activity.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!-- Snow -->
     <!-- <div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div><div class="snow"></div> -->
 
-    <!-- Canvas -->
-    <!-- <canvas  id="canvas">Click to draw<br/></canvas> -->
+    <button onclick="goTop()" id="goTop" class="goTop sky"><i class="fa-solid fa-chevron-up"></i></button>
+    <button onclick="changeTheme()" id="theme" class="theme sky"><i class="fa-solid fa-moon"></i></button>
+    <button onclick="changeTheme()" id="theme2" style="display:none; bottom: 625px;" class="theme sky"><i class="fa-solid fa-moon"></i></button>
+
 
     <!--  Nav Bar    -->
     <div class="nav nosel">
-        <div class="container flex navbox">
-            <h2 class="titlenav sky">0-0</h2>
+        <div class="container navbox">
 
             <!-- Icons Links -->
-
             <nav>
                 <ul>
-                    <li ><a href="#" class="material-icons sky" id="home" alt="wdawd">home</a></li>
-                    <li><a href="#" class="material-icons sky" id="servers">groups</a></li>
-                    <li><a href="#" class="material-icons sky" id="projects">api</a></li>
-                    <li><a href="#" class="material-icons sky" id="about">info</a></li>
+                    <li ><a href="#" class="sky" id="home" alt="wdawd"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="#" class="sky" id="projects"><i class="fa-solid fa-folder"></i></a></li>
+                    <li><a href="#" class="sky" id="about"><i class="fa-solid fa-address-card"></i></a></li>
                 </ul>
             </nav>
-
             <!-- ## -->
+
         </div>
 
         <!-- Progress Bar -->
@@ -90,7 +87,17 @@
                     <img id="disavatar" src="https://api.lanyard.rest/674660356819517440.png" alt="Towsif Kafi">
 
                     <div class="userinfo">
-                        <span id="username">Werewolf#2427</span>
+                        <div class="usernameBox">
+                            <span id="username">Werewolf#2427</span>
+                            <div class="copy tooltip">
+                                <i id="usernameCopy" class="fa-regular fa-copy"></i>
+                                <span class="tooltiptext usernameTooltip">Copy</span>
+                            </div>
+                        </div>
+                        <div class="status">
+                            <i id="statusIcon" class="fa fa-solid fa-power-off"></i>
+                            <span id="status" class="offline">Offline</span>
+                        </div>
                     </div>
                     <div class="badges">
 
@@ -114,10 +121,30 @@
 
                     <table id="links" style="width:20%">
                         <tr>
-                          <td><a class="button" href="https://discord.com/users/674660356819517440" target="_blank"><i class="fab fa-discord links"></i></a></td>
-                          <td><a class="button" href="https://github.com/Towsif12" target="_blank"><i class="fab fa-github links"></i></a></td>
-                          <td><a class="button" href="https://facebook.com/towsif.kafi" target="_blank"><i class="fab fa-facebook links"></i></a></td>
-                          <td><a class="button" href="https://www.instagram.com/towsif.kafi" target="_blank"><i class="fab fa-instagram links"></i></a></td>
+                          <td>
+                            <div class="tooltipup discord">
+                                <a class="button" href="https://discord.com/users/674660356819517440" target="_blank"><i class="fab fa-discord links"></i></a>
+                                <span class="tooltiptext">Werewolf#2427</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="tooltipup github">
+                                <a class="button" href="https://github.com/Towsif12" target="_blank"><i class="fab fa-github links"></i></a>
+                                <span class="tooltiptext">github.com/Towsif12</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="tooltipup fb">
+                                <a class="button" href="https://facebook.com/towsif.kafi" target="_blank"><i class="fab fa-facebook links"></i></a>
+                                <span class="tooltiptext">fb.com/towsif.kafi</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="tooltipup insta">
+                                <a class="button" href="https://www.instagram.com/towsif.kafi" target="_blank"><i class="fab fa-instagram links"></i></a>
+                                <span class="tooltiptext">instagr.am/towsifkafi</span>
+                            </div>
+                          </td>
                         </tr>
                     </table>
 
@@ -148,7 +175,7 @@
                         <span class="projectDesc">A Discord bot which plays Bangla lofi music in a channel for 24/7</span>
                         <div class="projectLinks">
                             <a href="https://top.gg/bot/887797915207208990">Link</a>
-                            <span>|</span>
+                            <span>&bull;</span>
                             <a href="#">Github</a>
                         </div>
                     </div>
@@ -165,7 +192,7 @@
                         <span class="projectDesc">Minecraft related Discord which has various helpful commands for server developers.</span>
                         <div class="projectLinks">
                             <a href="https://top.gg/bot/746402520397512874">Link</a>
-                            <span>|</span>
+                            <span>&bull;</span>
                             <a href="#">Github</a>
                         </div>
                     </div>
@@ -220,6 +247,115 @@
                         <span>Competent</span>
                         <div class="meterBar" style="background: #fc5029;"><img id="barIcon" style="width: 13%;" src="/images/cup.gif" alt=""></div>
                     </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="page">
+
+        <div class="stuffBox dropshadow greenShadow">
+
+            <span id="boxTitles">Tools & Applications</span>
+
+            <div id="hl"></div>
+
+            <div class="techs">
+
+               <div class="tech">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" /> 
+               </div> 
+
+               <div class="tech">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" />
+               </div>
+
+               <div class="tech">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jetbrains/jetbrains-original.svg" />
+               </div>
+
+               <div class="tech">
+                <img src="images/github.svg" />
+               </div>
+
+               <div class="tech">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" />
+               </div>
+
+               <div class="tech">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
+               </div>
+
+               <div class="tech">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg" />
+               </div>
+
+               <div class="tech">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" />
+               </div>
+
+               <div class="tech">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" />
+               </div>
+
+               <div class="tech">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" />
+               </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="divider">
+            <div class="vl"></div>
+        </div>
+
+        <div class="stuffBox dropshadow yellowShadow">
+
+            <span id="boxTitles">Technologies</span>
+
+            <div id="hl"></div>
+
+            <div class="techs">
+
+                <div class="tech">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+                </div>      
+
+                <div class="tech">
+                    <img src="images/express.svg">
+                </div>          
+
+                <div class="tech">  
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" />
+                </div> 
+
+                <div class="tech">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bulma/bulma-plain.svg" />
+                </div>                
+                      
+                <div class="tech">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
+                </div>
+
+                <div class="tech">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/discordjs/discordjs-plain.svg" />
+                </div>
+
+                <div class="tech">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" />
+                </div>                
+                <div class="tech">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
+                </div>                
+                
+                <div class="tech">
+                    <img src="images/deno.svg" alt="">
                 </div>
 
 

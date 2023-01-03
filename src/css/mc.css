@@ -1,0 +1,110 @@
+.box {
+    border-radius: 5px;
+    width: 100%;
+    background-color: var(--box-background);
+}
+
+.connection {
+    color: var(--font);
+}
+
+.headings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input input {
+    margin: 10px;
+    padding: 2%;
+    width: 96%;
+    background: var(--box-background-l);
+    border-width: 0px;
+    color: var(--font);
+}
+
+.input input:focus-visible {
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid var(--box-background-l);
+}
+
+.support {
+    display: flex;
+    justify-content: center;
+}
+
+.support span {
+    color: var(--font);
+    font-size: 0.8rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mcbtn {
+  background-color: var(--theme-color);
+  border: 1px solid var(--background);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .45rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 4px;
+}
+
+.mcbtn:hover {
+  background-color: var(--box-background-l);
+  color: var(--font);
+  border: 1px solid var(--font);
+}
+
+.mcbtn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.mcbtn:focus-visible {
+  box-shadow: none;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:30px;
+}
+
+.icons span {
+  color: var(--font);
+}
+
+table {
+  color: var(--font);
+}
+
+#hostname {
+  font-size: 20px;
+}
+
+#server-icon {
+  height: 100px;
+  width: 100px;
+  margin: 2px
+}

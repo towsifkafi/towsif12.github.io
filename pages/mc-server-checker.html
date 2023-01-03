@@ -5,14 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/mc.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.26/Tone.js" integrity="sha512-+esjJ8NSEfoB5Sr8R7jTcYxCR1Bd6q9C+WQC0JA2UXVPT8Mlo/TJqqyp0qeeoxFzkAaa8t6tZCHLGmw3oNI2Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="src/css/ambient.css">
-    <title>Ambient | Something</title>
-
+    <title>Minecraft Server Checker</title>
     <meta content="Towsif Kafi" property="og:title">
     <meta content="A random dude... 0,0" property="og:description">
     <meta content="UwU" property="og:site_name">
@@ -58,72 +57,69 @@
     <div class="main">
         <span id="circle" class="circle"></span>
 
-        <div class="status">
-            <span id="status">Test</span>
+
+        <div class="page">
+
+
+            <div class="connection box">
+
+                <div class="headings">
+                    <span>Server Checker</span>
+                    <span>Enter server IP address to get information</span>
+                </div>
+                <div id="hl"></div>
+
+                <div class="input">
+                    <input type="text" name="address" id="address" placeholder="hypixel.net | 104.17.71.15:25565">
+                </div>
+
+                <div class="support">
+                    <span>Supports Java Edition (1.7+) and Bedrock Edition</span>
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" id="mcget" class="mcbtn">Get Status</button>
+                    <button type="submit" id="mcgetBedrock" class="mcbtn" onClick="changeToBedrock()">Bedrock? <i class="fa-regular fa-square"></i></button>
+                </div>
+                 
+
+            </div>
+
+            <div class="divider">
+                <div class="vl"></div>
+            </div>
+
+            <div class="info box">
+
+                <div class="icons">
+                    <img id="server-icon" src="https://minecraft.global/images/icons/default_favicon.png" alt="">
+                    <span id="hostname">Server Name's Status</span>
+                </div>
+
+                <div class="otherInfo">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Players</td>
+                                <td>10/45</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+
+
         </div>
 
-        <div class="effects">
 
-            <div class="effect rainbox ld ld-blur-in">
-                <i class="fas fa-cloud-moon-rain icons"></i>
-                <span>Rain</span>
-                <input id="sounds" class='rain' type="range" name="rain-volume" min="-30" max="2" value="-30" onchange="updateVolume('rain', this.value);">
-            </div>
 
-            <div class="effect thunderbox ld ld-blur-in">
-                    <i class="fas fa-thunderstorm-moon icons"></i>
-                <span>Thunder</span>
-                <input id="sounds" class='thunder' type="range" name="thunder-volume" min="-30" max="2" value="-30" onchange="updateVolume('thunder', this.value);">
-            </div>
-
-            <div class="effect wavesbox ld ld-blur-in">
-                <i class="fas fa-wave-sine icons"></i>
-                <span>Waves</span>
-                <input id="sounds" class='waves' type="range" name="waves-volume" min="-30" max="2" value="-30" onchange="updateVolume('waves', this.value);">
-            </div>
-
-            <div class="effect windbox ld ld-blur-in">
-                <i class="fas fa-wind icons"></i>
-                <span>Wind</span>
-                <input id="sounds" class='wind' type="range" name="wind-volume" min="-30" max="2" value="-30" onchange="updateVolume('wind', this.value);">
-            </div>
-
-            <div class="effect noisebox ld ld-blur-in">
-                <i class="fas fa-waveform icons"></i>
-                <span>Noise</span>
-                <input id="sounds" class='noise' type="range" name="noise-volume" min="-30" max="2" value="-30" onchange="updateVolume('noise', this.value);">
-            </div>
-
-            <div class="effect cricketsbox ld ld-blur-in">
-                <i class="fas fa-bugs icons"></i>
-                <span>Crickets</span>
-                <input id="sounds" class='crickets' type="range" name="crickets-volume" min="-30" max="2" value="-30" onchange="updateVolume('crickets', this.value);">
-            </div>
-
-            <div class="effect firebox ld ld-blur-in">
-                <i class="fas fa-fire icons"></i>
-                <span>Fire</span>
-                <input id="sounds" class='fire' type="range" name="fire-volume" min="-30" max="2" value="-30" onchange="updateVolume('fire', this.value);">
-            </div>
-
-            <div class="effect waterfallbox ld ld-blur-in">
-                <i class="fas fa-water icons"></i>
-                <span>Water</span>
-                <input id="sounds" class='waterfall' type="range" name="waterfall-volume" min="-30" max="2" value="-30" onchange="updateVolume('waterfall', this.value);">
-            </div>
-
-            <div class="effect fanbox ld ld-blur-in">
-                <i class="fas fa-fan icons"></i>
-                <span>Fan</span>
-                <input id="sounds" class='fan' type="range" name="fan-volume" min="-30" max="2" value="-30" onchange="updateVolume('fan', this.value);">
-            </div>
-    
-        </div>
 
     </div>
     
-    <script src="src/js/index.js"></script>
-    <script src="src/js/cursor.js"></script>
-    <script src="src/js/ambient.js"></script>
+    <script src="/src/js/index.js"></script>
+    <script src="/src/js/cursor.js"></script>
+    <script src="/src/js/mc.js"></script>
 </body>
 </html>

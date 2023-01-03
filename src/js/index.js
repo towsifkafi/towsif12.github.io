@@ -16,8 +16,82 @@ $.fn.animateRotate = function (angle, duration, easing, complete) {
   });
 };
 
+$.fn.copy = function() {
+  return this.each(function() {
+    console.log(this.innerText)
+    navigator.clipboard.writeText(this.innerText);
+  })
+}
+
+function copy(element) {
+  var copyText = document.getElementById(element);
+  console.log(copyText.innerText)
+  navigator.clipboard.writeText(copyText.innerText);
+  alert("Copied paste to clipboard");
+}
+
+//Button Presses
+$('#usernameCopy').click(function() {
+  $('#username').copy()
+  $('.usernameTooltip').text('Copied').css('color', '#fff')
+  setTimeout(() => {
+    $('.usernameTooltip').text('Copy').css('color', '#8d8d8d')
+  }, 2000);
+})
+
 // Metrics
 fetch("https://hmm-api.fly.dev/metrics").then(function(response) {}).then(function(data) {}).catch(function() {});
+
+
+let topButton = document.getElementById("goTop");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    $('#goTop').fadeIn(250)
+    $('#theme2').fadeIn(250)
+    $('#theme').fadeOut(250)
+  } else {
+    $('#goTop').fadeOut(250)
+    $('#theme2').fadeOut(250)
+    $('#theme').fadeIn(250)
+  }
+}
+
+function goTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+let theme = 1
+
+function changeTheme() {
+  console.log('clicked')
+  if(theme) {
+    console.log('to white')
+    theme = 0
+    $(":root").css({ 
+      "--theme-color": "rgb(238, 121, 121)", 
+      "--background": "#fbfcf8",
+      "--box-background": "#fdf6e4",
+      "--box-background-l": "#e7decc",
+      "--drop-color": "#f08080d1",
+      "--font": "#1a1a22"
+    })
+  } else {
+    console.log('to black')
+    theme = 1
+    $(":root").css({ 
+      "--theme-color": "lightcoral", 
+      "--background": "#161616",
+      "--box-background": "#1d1d1d",
+      "--box-background-l": "#2d2d2d",
+      "--drop-color": "#f08080d1",
+      "--font": "white"
+    })
+  }
+}
 
 
 
@@ -122,40 +196,40 @@ window.addEventListener("load", () => {
   });
 
 
-  const canvas = document.getElementById("canvas");
-  const ctx = canvas.getContext("2d");
-  let coord = { x: 0, y: 0 };
+  // const canvas = document.getElementById("canvas");
+  // const ctx = canvas.getContext("2d");
+  // let coord = { x: 0, y: 0 };
 
-  document.addEventListener("mousedown", start);
-  document.addEventListener("mouseup", stop);
-  window.addEventListener("resize", resize);
+  // document.addEventListener("mousedown", start);
+  // document.addEventListener("mouseup", stop);
+  // window.addEventListener("resize", resize);
 
-  resize();
+  // resize();
 
-  function resize() {
-    ctx.canvas.width = document.body.clientWidth;
-    ctx.canvas.height = window.innerHeight;
-  }
-  function reposition(event) {
-    coord.x = event.clientX - canvas.offsetLeft;
-    coord.y = event.clientY - canvas.offsetTop;
-  }
-  function start(event) {
-    document.addEventListener("mousemove", draw);
-    reposition(event);
-  }
-  function stop() {
-    document.removeEventListener("mousemove", draw);
-  }
-  function draw(event) {
-    ctx.beginPath();
-    ctx.lineWidth = 5;
-    ctx.lineCap = "round";
-    ctx.strokeStyle = "#ACD3ED";
-    ctx.moveTo(coord.x, coord.y);
-    reposition(event);
-    ctx.lineTo(coord.x, coord.y);
-    ctx.stroke();
-  }
+  // function resize() {
+  //   ctx.canvas.width = document.body.clientWidth;
+  //   ctx.canvas.height = window.innerHeight;
+  // }
+  // function reposition(event) {
+  //   coord.x = event.clientX - canvas.offsetLeft;
+  //   coord.y = event.clientY - canvas.offsetTop;
+  // }
+  // function start(event) {
+  //   document.addEventListener("mousemove", draw);
+  //   reposition(event);
+  // }
+  // function stop() {
+  //   document.removeEventListener("mousemove", draw);
+  // }
+  // function draw(event) {
+  //   ctx.beginPath();
+  //   ctx.lineWidth = 5;
+  //   ctx.lineCap = "round";
+  //   ctx.strokeStyle = "#ACD3ED";
+  //   ctx.moveTo(coord.x, coord.y);
+  //   reposition(event);
+  //   ctx.lineTo(coord.x, coord.y);
+  //   ctx.stroke();
+  // }
 
 });

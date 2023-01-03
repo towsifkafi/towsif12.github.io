@@ -30,13 +30,29 @@ $(document).ready(() => {
         let status = userdata.discord_status;
 
         if(status == "online") {
-            $('#disavatar').css(`border`, `solid 2.5px #3ABF6A`)
+
+            $('#disavatar').css(`outline`, '3px solid #3ABF6A')
+            $('#status').text('Online').css(`color`, `#3ABF6A`)
+            $('#statusIcon').removeAttr('class').addClass('fa fa-solid fa-circle').css(`color`, `#3ABF6A`)
+
         } else if(status == "offline") {
-            $('#disavatar').css(`border`, `solid 2.5px #444A51`)
+
+            $('#disavatar').css(`outline`, '3px solid #444A51')
+            $('#status').text('Offline').css(`color`, `#444A51`)
+            $('#statusIcon').removeAttr('class').addClass('fa fa-solid fa-power-off').css(`color`, `#444A51`)
+
         } else if(status == "dnd") {
-            $('#disavatar').css(`border`, `solid 2.5px #ED4245`)
+
+            $('#disavatar').css(`outline`, '3px solid #ED4245')
+            $('#status').text('Do Not Disturb').css(`color`, `#ED4245`)
+            $('#statusIcon').removeAttr('class').addClass('fa fa-solid fa-circle-stop').css(`color`, `#ED4245`)
+
         } else if(status == "idle") {
-            $('#disavatar').css(`border`, `solid 2.5px #FAA81A`)
+
+            $('#disavatar').css(`outline`, '3px solid #FAA81A')
+            $('#status').text('Idle').css(`color`, `#FAA81A`)
+            $('#statusIcon').removeAttr('class').addClass('fa fa-solid fa-moon').css(`color`, `#FAA81A`)
+
         }
 
         $('#username').text(`${userdata.discord_user.username}#${userdata.discord_user.discriminator}`)
