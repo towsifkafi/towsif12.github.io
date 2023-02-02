@@ -1,9 +1,6 @@
 <script>
-	import Navbar from "../components/Navbar.svelte";
 	import Typewriter from "svelte-typewriter";
-	import Discord from "../components/Discord.svelte";
 	import { slide } from "svelte/transition";
-	import { useLanyard } from "svelte-lanyard";
   	import { onMount } from "svelte";
 
 	onMount(() => {
@@ -11,7 +8,6 @@
 			fetch("https://hmm-api.fly.dev/metrics").then(function(response) {}).then(function(data) {}).catch(function() {});
 		}
 	})
-	const discord = useLanyard("674660356819517440", { type: 'rest', restInterval: 5000 });
 
 </script>
 
@@ -20,8 +16,6 @@
 </svelte:head>
 
 <main class="nosel">
-
-	<Navbar discord={discord} active='home'/>
 
 	<div in:slide={{duration: 250}} out:slide={{duration: 250}}>
 		<h1>Towsif Kafi</h1>
@@ -35,8 +29,6 @@
 			<h2>From Bangladesh</h2>
 		</div>
 	</div>
-
-	
 
 </main>
 

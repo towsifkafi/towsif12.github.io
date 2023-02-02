@@ -8,7 +8,6 @@
 </svelte:head>
 
 <about>
-  <Navbar active="about" />
 
   <div out:slide={{ duration: 250 }} class="about">
     <h1>About Me</h1>

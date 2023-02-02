@@ -8,7 +8,7 @@
 </svelte:head>
 
 <etc>
-    <Navbar active="likes" />
+
     <div out:slide={{ duration: 250 }} class="likes">
         <h1>My Hobbies</h1>
         <p>

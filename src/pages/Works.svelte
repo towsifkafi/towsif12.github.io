@@ -8,7 +8,7 @@
 </svelte:head>
 
 <dev>
-    <Navbar active='nice' />
+
     <div out:slide={{ duration: 250 }} class="works">
 
         <h1>Technologies</h1>

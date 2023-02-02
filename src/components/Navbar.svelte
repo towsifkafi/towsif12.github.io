@@ -1,34 +1,42 @@
 <script>
+    import {location} from 'svelte-spa-router';
     import { fade } from "svelte/transition";
     import { onMount } from "svelte";
+	import { useLanyard } from "svelte-lanyard";
     import Discord from "./Discord.svelte";
-
-    let count = 0;
+    const discord = useLanyard("674660356819517440", { type: 'rest', restInterval: 5000 });
 
     let audio;
-    export let active;
+    let change = true;
 
-    onMount(() => {
+    function click() {
+        if(change) {
+            change = false
+            return
+        }
         audio.volume = 0.2
         audio.play()
+    }
+    onMount(() => {
     })
-    export let discord = undefined;
+    $: $location, click();
+    
 
 </script>
 
 <navbox>
     <audio src='/assets/click.mp3' bind:this={audio}></audio>
-    {#if $discord}
+    {#if $discord && $location == '/'}
         <Discord discord={$discord}></Discord>
     {/if}
-    {#if active == 'home'}
+    {#if $location == '/'}
         <p in:fade out:fade>Click to change pages..</p>
     {/if}
     <div class="nav">
-        <a href="/#/"><i class="fa-thin fa-circle-user {active == 'home' || active == '/' ? active : ''}"></i></a>
-        <a href="/#/about"><i class="fa-thin fa-address-card {active == 'about' ? active : ''}"></i></a>
-        <a href="/#/dev"><i class="fa-thin fa-code {active == 'nice' ? active : ''}"></i></a>
-        <a href="/#/etc"><i class="fa-{active == 'likes' ? 'solid' : 'thin'} fa-heart {active == 'likes' ? active : ''}"></i></a>
+        <a  href="/#/"><i class="fa-thin fa-circle-user {$location == '/' ? 'home' : ''}"></i> </a>
+        <a  href="/#/about"><i class="fa-thin fa-address-card {$location == '/about' ? 'about' : ''}"></i></a>
+        <a  href="/#/dev"><i class="fa-thin fa-code {$location == '/dev' ? 'nice' : ''}"></i></a>
+        <a  href="/#/etc"><i class="fa-{$location == '/etc' ? 'solid' : 'thin'} fa-heart {$location == '/etc' ? 'likes' : ''}"></i></a>
     </div>
 </navbox>
 
