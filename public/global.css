@@ -32,6 +32,18 @@ body {
 	user-select: none;
 }
 
+@media only screen and (max-width: 600px) {
+	#nav {
+		position: sticky;
+		bottom: 0;
+	}
+	navbox {
+		position: relative;
+		bottom: 0;
+		display: flex;
+	}
+}
+
 a {
 	color: #fff;
 	text-decoration: none;

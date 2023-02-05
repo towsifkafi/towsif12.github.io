@@ -24,7 +24,7 @@
 
 </script>
 
-<navbox>
+<navbox class="{$location == '/' ? 'margint' : ''} {`${$location.replace('/', '')+'-bg'}`}">
     <audio src='/assets/click.mp3' bind:this={audio}></audio>
     {#if $discord && $location == '/'}
         <Discord discord={$discord}></Discord>
@@ -33,10 +33,10 @@
         <p in:fade out:fade>Click to change pages..</p>
     {/if}
     <div class="nav">
-        <a  href="/#/"><i class="fa-thin fa-circle-user {$location == '/' ? 'home' : ''}"></i> </a>
-        <a  href="/#/about"><i class="fa-thin fa-address-card {$location == '/about' ? 'about' : ''}"></i></a>
-        <a  href="/#/dev"><i class="fa-thin fa-code {$location == '/dev' ? 'nice' : ''}"></i></a>
-        <a  href="/#/etc"><i class="fa-{$location == '/etc' ? 'solid' : 'thin'} fa-heart {$location == '/etc' ? 'likes' : ''}"></i></a>
+        <a href="/#/"><i class="fa-thin fa-circle-user {$location == '/' ? 'home' : ''}"></i>​</a>
+        <a href="/#/about"><i class="fa-thin fa-address-card {$location == '/about' ? 'about' : ''}"></i>​</a>
+        <a href="/#/dev"><i class="fa-thin fa-code {$location == '/dev' ? 'nice' : ''}"></i>​</a>
+        <a href="/#/etc"><i class="fa-{$location == '/etc' ? 'solid' : 'thin'} fa-heart {$location == '/etc' ? 'likes' : ''}"></i>​</a>
     </div>
 </navbox>
 
@@ -88,12 +88,27 @@
         border-bottom: 1px solid transparent;
     }
 
-
-
     @keyframes pulse {
         10% {
             color: #f85e5eea;
             transform: scale(1.1)
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        navbox {
+            bottom: 0px;
+            display: flex;
+        }
+        .nav {
+            margin-top: 5px;
+        }
+        .margint {
+            margin-top: 20%;
+        }
+        .about-bg, .dev-bg {
+            background-color: #010101;
+            border-top: 1px solid #1a1a1a;
         }
     }
 
