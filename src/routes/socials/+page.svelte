@@ -95,7 +95,8 @@
     .links {
         margin-top: 50px;
         display: grid;
-        grid-template-columns: auto auto auto auto auto;
+        /* grid-template-columns: auto auto auto auto auto; */
+        grid-template-columns: repeat(4, 1fr);
         row-gap: 25px;
     }
 

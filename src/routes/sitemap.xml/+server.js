@@ -10,7 +10,31 @@ export async function GET() {
         xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
       >
-        <!-- <url> elements go here -->
+      <url>
+        <loc>https://towsifkafi.com/</loc>
+        <lastmod>2023-03-03T15:12:44+00:00</lastmod>
+        <priority>1.00</priority>
+      </url>
+      <url>
+        <loc>https://towsifkafi.com/about</loc>
+        <lastmod>2023-03-03T15:12:44+00:00</lastmod>
+        <priority>0.80</priority>
+      </url>
+      <url>
+        <loc>https://towsifkafi.com/dev</loc>
+        <lastmod>2023-03-03T15:12:44+00:00</lastmod>
+        <priority>0.80</priority>
+      </url>
+      <url>
+        <loc>https://towsifkafi.com/etc</loc>
+        <lastmod>2023-03-03T15:12:44+00:00</lastmod>
+        <priority>0.80</priority>
+      </url>
+      <url>
+        <loc>https://towsifkafi.com/socials</loc>
+        <lastmod>2023-03-03T15:12:44+00:00</lastmod>
+        <priority>0.80</priority>
+      </url>
       </urlset>`.trim(),
       {
         headers: {
