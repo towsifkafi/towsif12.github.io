@@ -1,10 +1,10 @@
 <script>
-    import Navbar from "../components/Navbar.svelte";
     import { slide } from "svelte/transition";
 </script>
 
 <svelte:head>
 	<title>Else • Towsif Kafi</title>
+    <meta name="description" content="Learn more about my hobbies, interests, what I like to do.">
 </svelte:head>
 
 <etc>

@@ -1,11 +1,15 @@
 <script>
-    import {location} from 'svelte-spa-router';
+    let location = $page.url.pathname;
     import { fade } from "svelte/transition";
     import { onMount } from "svelte";
 	import { useLanyard } from "svelte-lanyard";
     import Discord from "./Discord.svelte";
-    const discord = useLanyard("674660356819517440", { type: 'rest', restInterval: 5000 });
+    import { page } from "$app/stores";
+    let discord;
 
+    /**
+   * @type {HTMLAudioElement}
+   */
     let audio;
     let change = true;
 
@@ -18,25 +22,26 @@
         audio.play()
     }
     onMount(() => {
+        discord = useLanyard("674660356819517440", { type: 'rest', restInterval: 5000 });
     })
-    $: $location, click();
+    $: $page.url.pathname, click();
     
 
 </script>
 
-<navbox class="{$location == '/' ? 'margint' : ''} {`${$location.replace('/', '')+'-bg'}`}">
+<navbox class="{$page.url.pathname == '/' ? 'margint' : ''} {`${$page.url.pathname.replace('/', '')+'-bg'}`}">
     <audio src='/assets/click.mp3' bind:this={audio}></audio>
-    {#if $discord && $location == '/'}
+    {#if $discord && $page.url.pathname == '/'}
         <Discord discord={$discord}></Discord>
     {/if}
-    {#if $location == '/'}
+    {#if $page.url.pathname == '/'}
         <p in:fade out:fade>Click to change pages..</p>
     {/if}
     <div class="nav">
-        <a href="/#/"><i class="fa-thin fa-circle-user {$location == '/' ? 'home' : ''}"></i>​</a>
-        <a href="/#/about"><i class="fa-thin fa-address-card {$location == '/about' ? 'about' : ''}"></i>​</a>
-        <a href="/#/dev"><i class="fa-thin fa-code {$location == '/dev' ? 'nice' : ''}"></i>​</a>
-        <a href="/#/etc"><i class="fa-{$location == '/etc' ? 'solid' : 'thin'} fa-heart {$location == '/etc' ? 'likes' : ''}"></i>​</a>
+        <a href="/"><i class="fa-thin fa-circle-user {$page.url.pathname == '/' ? 'home' : ''}"></i>​</a>
+        <a href="/about"><i class="fa-thin fa-address-card {$page.url.pathname == '/about' ? 'about' : ''}"></i>​</a>
+        <a href="/dev"><i class="fa-thin fa-code {$page.url.pathname == '/dev' ? 'nice' : ''}"></i>​</a>
+        <a href="/etc"><i class="fa-{$page.url.pathname == '/etc' ? 'solid' : 'thin'} fa-heart {$page.url.pathname == '/etc' ? 'likes' : ''}"></i>​</a>
     </div>
 </navbox>
 

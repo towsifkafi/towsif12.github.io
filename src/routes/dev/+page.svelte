@@ -1,10 +1,10 @@
 <script>
-    import Navbar from "../components/Navbar.svelte";
     import { slide } from "svelte/transition";
 </script>
 
 <svelte:head>
-	<title>Works • Towsif Kafi</title>
+    <title>Works • Towsif Kafi</title>
+    <meta name="description" content="Learn about the technologies and tools that I use to create my projects, and get a behind-the-scenes look at my development process.">
 </svelte:head>
 
 <dev>

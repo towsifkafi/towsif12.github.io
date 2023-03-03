@@ -1,6 +1,11 @@
 <script>
+// @ts-nocheck
+
     import { fade } from "svelte/transition";
-    export let discord;
+    /**
+   * @type any
+   */
+     export let discord;
     let activities = discord.activities.filter(a => a.type != 4).filter(a => a.type != 2)
     console.log(activities)
     console.log(discord)
@@ -24,7 +29,14 @@
 
     import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
     import '@splidejs/svelte-splide/css';
-    import { types } from '../activity_types'
+    const types = {
+        0: "Playing",
+        1: "Streaming",
+        2: "Listening To",
+        3: "Watching",
+        4: "Custom Status",
+        5: "Competing"
+    }
 
 </script>
 
@@ -48,7 +60,7 @@
                 <SplideSlide>
                     <discord>
                         <div class="avatar">
-                            <img src="https://api.lanyard.rest/674660356819517440.gif" alt="">
+                            <img src="https://cdn.discordapp.com/avatars/{discord.discord_user.id}/{discord.discord_user.avatar}.{discord.discord_user.avatar.startsWith("a_") ? 'gif' : 'png'}" alt="">
                             <span class="activity" id="{discord.discord_status}"></span>
                         </div>
                         <div class="info {discord.discord_status}">

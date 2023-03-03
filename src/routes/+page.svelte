@@ -1,4 +1,5 @@
 <script>
+
 	import Typewriter from "svelte-typewriter";
 	import { slide } from "svelte/transition";
   	import { onMount } from "svelte";
@@ -21,7 +22,7 @@
 		<h1>Towsif Kafi</h1>
 		<div class="info">
 			<h2>A</h2>
-			<Typewriter mode=loop cursor={false} wordInterval=2500>
+			<Typewriter mode="loop" cursor="{false}" wordInterval="{2500}">
 				<h2 class="what" id="boy">Boy</h2>
 				<h2 class="what" id="dev">Developer</h2>
 				<h2 class="what" id="student">Student</h2>
