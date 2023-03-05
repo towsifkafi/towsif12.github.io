@@ -12,6 +12,45 @@
 
 </script>
 
+<svelte:head>
+	<script type="application/ld+json">
+		{
+			"@context": "http://www.schema.org",
+			"@graph": [
+				{
+					"@type": "WebPage",
+					"@id": "https://towsifkafi.com/",
+					"url": "https://towsifkafi.com/",
+					"name": "Towsif Kafi",
+					"isPartOf": {
+						"@id": "https://towsifkafi.com/#website"
+					},
+					"inLanguage": "en-US",
+					"potentialAction": [
+						{
+							"@type": "ReadAction",
+							"target": [
+								"https://towsifkafi.com/"
+							]
+						}
+					]
+				},
+				{
+					"@type": "BreadcrumbList",
+					"@id": "https://towsifkafi.com/#breadcrumb",
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"name": "Home"
+						}
+					]
+				}
+			]
+		}
+	</script>
+</svelte:head>
+
 <main class="nosel">
 
 	<div in:slide={{duration: 250}} out:slide={{duration: 250}}>

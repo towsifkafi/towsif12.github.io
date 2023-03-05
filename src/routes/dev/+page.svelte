@@ -35,7 +35,7 @@
                         {
                             "@type": "ListItem",
                             "position": 1,
-                            "name": "Development",
+                            "name": "Development"
                         }
                     ]
                 }
