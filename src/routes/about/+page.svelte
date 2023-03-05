@@ -5,6 +5,44 @@
   <svelte:head>
       <title>About • Towsif Kafi</title>
 		  <meta name="description" content="Get to know me and find out what motivates and inspires me to do what I love.">
+
+      <script type="application/ld+json">
+        {
+          "@context": "http://www.schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "https://towsifkafi.com/about/",
+              "url": "https://towsifkafi.com/about/",
+              "name": "About",
+              "isPartOf": {
+                "@id": "https://towsifkafi.com/#website"
+              },
+              "inLanguage": "en-US",
+              "potentialAction": [
+                {
+                  "@type": "ReadAction",
+                  "target": [
+                    "https://towsifkafi.com/about/"
+                  ]
+                }
+              ]
+            },
+            {
+              "@type": "BreadcrumbList",
+              "@id": "https://towsifkafi.com/about/#breadcrumb",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "About",
+                }
+              ]
+            }
+          ]
+        }
+      </script>
+
   </svelte:head>
   
   <about>

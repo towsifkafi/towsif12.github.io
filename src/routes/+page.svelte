@@ -12,10 +12,6 @@
 
 </script>
 
-<svelte:head>
-	<title>Me • Towsif Kafi</title>
-</svelte:head>
-
 <main class="nosel">
 
 	<div in:slide={{duration: 250}} out:slide={{duration: 250}}>

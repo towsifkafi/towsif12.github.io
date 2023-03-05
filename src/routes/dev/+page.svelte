@@ -5,6 +5,44 @@
 <svelte:head>
     <title>Works • Towsif Kafi</title>
     <meta name="description" content="Learn about the technologies and tools that I use to create my projects, and get a behind-the-scenes look at my development process.">
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://www.schema.org",
+            "@graph": [
+                {
+                    "@type": "WebPage",
+                    "@id": "https://towsifkafi.com/dev/",
+                    "url": "https://towsifkafi.com/dev/",
+                    "name": "Development",
+                    "isPartOf": {
+                        "@id": "https://towsifkafi.com/#website"
+                    },
+                    "inLanguage": "en-US",
+                    "potentialAction": [
+                        {
+                            "@type": "ReadAction",
+                            "target": [
+                                "https://towsifkafi.com/dev/"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "https://towsifkafi.com/dev/#breadcrumb",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Development",
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+
 </svelte:head>
 
 <dev>

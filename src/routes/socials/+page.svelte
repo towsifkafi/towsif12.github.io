@@ -5,6 +5,42 @@
 <svelte:head>
     <title>Socials • Towsif Kafi</title>
     <meta name="description" content="Follow me on social media to discover more about me and feel free to reach out to me there to chat.">
+    <script type="application/ld+json">
+        {
+            "@context": "http://www.schema.org",
+            "@graph": [
+                {
+                    "@type": "WebPage",
+                    "@id": "https://towsifkafi.com/socials/",
+                    "url": "https://towsifkafi.com/socials/",
+                    "name": "Socials",
+                    "isPartOf": {
+                        "@id": "https://towsifkafi.com/#website"
+                    },
+                    "inLanguage": "en-US",
+                    "potentialAction": [
+                        {
+                            "@type": "ReadAction",
+                            "target": [
+                                "https://towsifkafi.com/socials/"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "https://towsifkafi.com/socials/#breadcrumb",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Socials",
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
 </svelte:head>
 
 <social>

@@ -5,6 +5,42 @@
 <svelte:head>
 	<title>Else • Towsif Kafi</title>
     <meta name="description" content="Learn more about my hobbies, interests, what I like to do.">
+    <script type="application/ld+json">
+        {
+            "@context": "http://www.schema.org",
+            "@graph": [
+                {
+                    "@type": "WebPage",
+                    "@id": "https://towsifkafi.com/etc/",
+                    "url": "https://towsifkafi.com/etc/",
+                    "name": "Etc",
+                    "isPartOf": {
+                        "@id": "https://towsifkafi.com/#website"
+                    },
+                    "inLanguage": "en-US",
+                    "potentialAction": [
+                        {
+                            "@type": "ReadAction",
+                            "target": [
+                                "https://towsifkafi.com/etc/"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "https://towsifkafi.com/etc/#breadcrumb",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Etc",
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
 </svelte:head>
 
 <etc>
