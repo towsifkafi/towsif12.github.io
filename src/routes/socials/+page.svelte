@@ -34,7 +34,8 @@
                         {
                             "@type": "ListItem",
                             "position": 1,
-                            "name": "Socials"
+                            "name": "Socials",
+                            "item": "https://towsifkafi.com/socials/"
                         }
                     ]
                 }

@@ -34,7 +34,8 @@
                         {
                             "@type": "ListItem",
                             "position": 1,
-                            "name": "Etc"
+                            "name": "Etc",
+                            "item": "https://towsifkafi.com/etc/"
                         }
                     ]
                 }
