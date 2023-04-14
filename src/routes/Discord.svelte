@@ -130,6 +130,7 @@
         border-radius: 8px;
         align-items: center;
         min-height: 35px;
+        background-color: #00000047
     }
     /* .splide__arrows {
         display: none;

@@ -209,6 +209,7 @@
         transition: 0.3s;
         padding: 8px;
 
+        background-color: #00000047;
         display: flex;
         flex-direction: row;
         align-items: center;

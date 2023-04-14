@@ -38,9 +38,9 @@
         <p in:fade out:fade>Click to change pages..</p>
     {/if}
     <div class="nav">
-        <a href="/"><i class="fa-thin fa-circle-user {$page.url.pathname == '/' ? 'home' : ''}"></i>​</a>
-        <a href="/about"><i class="fa-thin fa-address-card {$page.url.pathname == '/about' ? 'about' : ''}"></i>​</a>
-        <a href="/dev"><i class="fa-thin fa-code {$page.url.pathname == '/dev' ? 'nice' : ''}"></i>​</a>
+        <a href="/"><i class="fa-{$page.url.pathname == '/' ? 'solid' : 'thin'} fa-circle-user {$page.url.pathname == '/' ? 'home' : ''}"></i>​</a>
+        <a href="/about"><i class="fa-{$page.url.pathname == '/about' ? 'solid' : 'thin'} fa-address-card {$page.url.pathname == '/about' ? 'about' : ''}"></i>​</a>
+        <a href="/dev"><i class="fa-{$page.url.pathname == '/dev' ? 'solid' : 'thin'} fa-code {$page.url.pathname == '/dev' ? 'nice' : ''}"></i>​</a>
         <a href="/etc"><i class="fa-{$page.url.pathname == '/etc' ? 'solid' : 'thin'} fa-heart {$page.url.pathname == '/etc' ? 'likes' : ''}"></i>​</a>
     </div>
 </navbox>
@@ -62,7 +62,7 @@
         color: #ffffffb4;
     }
 
-    a{
+    a {
         color: #ffffffc5;
     }
     a:hover {
@@ -111,10 +111,34 @@
         .margint {
             margin-top: 20%;
         }
-        .about-bg, .dev-bg {
-            background-color: #010101;
-            border-top: 1px solid #1a1a1a;
+        .about-bg, .dev-bg, .etc-bg {
+            background-color: #00000047;
+            border-top: 1px solid #00000047;
         }
     }
+    @media screen and (min-width: 1400px) {
+		p {
+            font-size: 14px;
+        }
+        a {
+            font-size: 24px;
+        }
+	}
+	@media screen and (min-width: 1600px) {
+		p {
+            font-size: 15px;
+        }
+        a {
+            font-size: 27px;
+        }
+	}
+	@media screen and (min-width: 1900px) {
+		p {
+            font-size: 16px;
+        }
+        a {
+            font-size: 32px;
+        }
+	}
 
 </style>

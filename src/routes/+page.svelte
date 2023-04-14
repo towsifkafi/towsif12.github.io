@@ -111,6 +111,31 @@
 		color: lightgreen;
 	}
 
+	@media screen and (min-width: 1400px) {
+		h1 {
+			font-size: 4.5em;
+		}
+		h2 {
+			font-size: 1.5em;
+		}
+	}
+	@media screen and (min-width: 1600px) {
+		h1 {
+			font-size: 5.5em;
+		}
+		h2 {
+			font-size: 1.6em;
+		}
+	}
+	@media screen and (min-width: 1900px) {
+		h1 {
+			font-size: 6em;
+		}
+		h2 {
+			font-size: 1.8em;
+		}
+	}
+
 
 
 </style>

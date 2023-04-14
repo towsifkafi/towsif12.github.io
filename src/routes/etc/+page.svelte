@@ -60,7 +60,7 @@
                 <div class="gamebox">
                     <div class="game">
                         <img src="https://icon-library.com/images/pokemon-trainer-icon/pokemon-trainer-icon-7.jpg" alt="Pokemon">
-                        <h3>Pokemon Emerald (GBA)</h3>
+                        <h3>Pokemon Emerald</h3>
                     </div>
                     <div class="game">
                         <img src="https://lh3.googleusercontent.com/0gR8ROv_PKRBYFMVt00L23Ntf9js1p-wxV1U405UsNFyKqKRnovcEA764TGVs5FvBP3FUFwg-OCoRO4mBbzJDg" alt="Minecraft">
